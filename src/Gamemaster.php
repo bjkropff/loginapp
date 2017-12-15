@@ -1,6 +1,7 @@
 <?php
     class Gamemaster
     {
+
         private $user;
         private $pass;
         private $id;
@@ -14,7 +15,7 @@
 
         static function deleteAll()
         {
-            $executed = $GLOBALS['DB']->exec("DELETE FROM gamemaster;");
+            $executed = $GLOBALS['DB']->exec("DELETE FROM gamemasters;");
             return true;
         }
 
@@ -24,19 +25,9 @@
           $this->id = (int) $new_id;
         }
 
-        function getId()
-        {
-            return $this->id;
-        }
-
         function setUser($new_user)
         {
           $this->user = $new_user;
-        }
-
-        function getUser()
-        {
-            return $this->user;
         }
 
         function setPass($new_pass)
@@ -44,10 +35,22 @@
           $this->pass = $new_pass;
         }
 
+
+        function getId()
+        {
+            return $this->id;
+        }
+
+        function getUser()
+        {
+            return $this->user;
+        }
+
         function getPass()
         {
             return $this->pass;
         }
+
 
         function save()
         {

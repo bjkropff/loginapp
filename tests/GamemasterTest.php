@@ -123,29 +123,27 @@
             $this->assertEquals($get, $result);
         }
 
-        // function test_getAllGamemasters()
-        // {
-        //     //Arrange
-        //     $user = "Brian";
-        //     $pass = "1a2b3c4d5e6f7g8h9j0k";
-        //     $test_gamemaster= new Gamemaster($user, $pass);
-        //
-        //     $result = $test_gamemaster->save();
-        //     print($result);
-        //
-        //     $user2 = "Andy";
-        //     $pass2 = "e6f7g8h9j0k";
-        //     $test_gamemaster2= new Gamemaster($user2, $pass2);
-        //
-        //     $result2 = $test_gamemaster2->save();
-        //     print($result2);
-        //
-        //     //Act
-        //     $arrayOfgamemasters = Gamemaster::getAllGamemasters();
-        //
-        //     //Assert
-        //     $this->assertEquals($arrayOfgamemasters, [$test_gamemaster, $test_gamemaster2]);
-        // }
+        function test_getAllGamemasters()
+        {
+            //Arrange
+            $user = "Brian";
+            $pass = "1a2b3c4d5e6f7g8h9j0k";
+            $test_gamemaster= new Gamemaster($user, $pass);
+
+            $result = $test_gamemaster->save();
+
+            $user2 = "Andy";
+            $pass2 = "e6f7g8h9j0k";
+            $test_gamemaster2= new Gamemaster($user2, $pass2);
+
+            $result2 = $test_gamemaster2->save();
+
+            //Act
+            $arrayOfgamemasters = Gamemaster::getAllGamemasters();
+
+            //Assert
+            $this->assertEquals($arrayOfgamemasters, [$test_gamemaster, $test_gamemaster2]);
+        }
 
         // function test_findUserById()
         // {

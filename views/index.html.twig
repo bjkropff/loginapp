@@ -1,0 +1,41 @@
+<html>
+  <head>
+      <link rel="stylesheet" href="./css/bootstrap.css">
+      <script src="./js/jquery-3.2.1.js" ></script>
+      <link rel="stylesheet" href="./css/stylesIndex.css" >
+      <title>Players</title>
+  </head>
+  <body>
+    <div class="container">
+        <div class="header clearfix">
+          <nav>
+            <ul class="nav nav-pills pull-right">
+            </ul>
+          </nav>
+          <h3 class="text-muted">Teams Page</h3>
+        </div>
+
+        <div class="jumbotron">
+            <div class="row">
+              {% for team in teams %}
+                <h3><a href="/{{team.name}}">{{team.name}}</a></h3>
+              {% endfor %}
+            </div>
+        </div>
+
+        <div class="col-sm-12">
+          <h2>Make a new team: </h2>
+
+          <form action="/new_team" method="post">
+              <label for="teamname">New team name:</label>
+              <input id="teamname" name="teamname" type="text" required>
+              <button class="btn btn-success" type="submit">Add new team</button>
+          </form>
+        </div>
+      <div>
+    </div>
+    <script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
+    <script src="../js/vueapp.js" ></script>
+
+  </body>
+</html>
