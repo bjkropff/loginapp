@@ -4,7 +4,7 @@
     require_once __DIR__."/../vendor/autoload.php";
 
     //Class constructors Local
-    require_once __DIR__."/../src/Account.php";
+    require_once __DIR__."/../src/Gamemaster.php";
 
     session_start();
     if (empty($_SESSION['order_of_init'])) {
@@ -43,7 +43,7 @@
 
     // Go to homepage
     $app->get("/", function() use ($app) {
-        return $app['twig']->render('index.html.twig', array('geammasters' => Gamemaster::getAllGeammaster()));
+        return $app['twig']->render('index.html.twig', array('gamemasters' => Gamemaster::getAllGamemasters()));
     });
 
 

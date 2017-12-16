@@ -12,24 +12,33 @@
             <ul class="nav nav-pills pull-right">
             </ul>
           </nav>
-          <h3 class="text-muted">Teams Page</h3>
+          <h3 class="text-muted">Login Page</h3>
         </div>
 
         <div class="jumbotron">
             <div class="row">
-              {% for team in teams %}
-                <h3><a href="/{{team.name}}">{{team.name}}</a></h3>
-              {% endfor %}
+              <h2>Log in</h2>
+              <form action="/teams" method="get">
+                  <label for="gamemasteruser">Username:</label>
+                  <input id="gamemasteruser" name="gamemasteruser" type="text" required>
+                  <label for="gamemasterpassword">Password:</label>
+                  <input id="gamemasterpassword" name="gamemasterpassword" type="text" required>
+
+                  <button class="btn btn-success" type="submit">Log in</button>
+              </form>
             </div>
         </div>
 
         <div class="col-sm-12">
-          <h2>Make a new team: </h2>
+          <h2>Make a new account: </h2>
 
-          <form action="/new_team" method="post">
-              <label for="teamname">New team name:</label>
-              <input id="teamname" name="teamname" type="text" required>
-              <button class="btn btn-success" type="submit">Add new team</button>
+          <form action="/new_gamemaster" method="post">
+            <label for="newuser">New Username:</label>
+            <input id="newuser" name="newuser" type="text" required>
+            <label for="newpassword">New Password:</label>
+            <input id="newpassword" name="newpassword" type="text" required>
+
+              <button class="btn btn-success" type="submit">Add new gamemaster</button>
           </form>
         </div>
       <div>
